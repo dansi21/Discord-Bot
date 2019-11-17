@@ -30,7 +30,7 @@ namespace ConsoleApp1
             //_client.UserJoined += UserJoinedGuild;
 
 
-            var Bottoken = "NTkwNDE0NjUwNzAxNjQzNzc3.XdBzuA.jZiJ5GvnwLFBF7LWY3wdPIeP6Xo";
+            var Bottoken = "TOKEN HERE";
             await RegisterCommandsAsync();
             await _client.LoginAsync(TokenType.Bot, Bottoken);
             await _client.StartAsync();
