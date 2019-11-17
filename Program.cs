@@ -30,7 +30,7 @@ namespace ConsoleApp1
             //_client.UserJoined += UserJoinedGuild;
 
 
-            var Bottoken = "";
+            var Bottoken = "NTkwNDE0NjUwNzAxNjQzNzc3.XdBzuA.jZiJ5GvnwLFBF7LWY3wdPIeP6Xo";
             await RegisterCommandsAsync();
             await _client.LoginAsync(TokenType.Bot, Bottoken);
             await _client.StartAsync();
@@ -52,7 +52,7 @@ namespace ConsoleApp1
                 return;
             int position = 0;
 
-            if (message.HasMentionPrefix(_client.CurrentUser, ref position) || message.HasStringPrefix("$",ref position))
+            if (message.HasMentionPrefix(_client.CurrentUser, ref position) || message.HasStringPrefix("$",ref position) || message.Content.Contains("DasaniBot#6081"))
             {
                 var context = new SocketCommandContext(_client, message);
                 var result = await _commands.ExecuteAsync(context, position, _service);
@@ -61,13 +61,15 @@ namespace ConsoleApp1
             }
 
         }
-
-        //private async Task UserJoinedGuild(SocketGuildUser user) {
-        //var guild = user.Guild;
-        //var role = guild.Roles;
+        /*
+        private async Task UserJoinedGuild(IGuildUser user) {
+        var guild = user.Guild;
+        var role = guild.Roles.Any(x => x.Name == "The Bois");
         //FirstOrDefault(x => x.Name.ToString() == "The Bois");
-        //await (user as IGuildUser).AddRoleAsync(role);
-        //}
+        await (user as IGuildUser).AddRoleAsync(role);
+        }
+        */
+
         public void ConsoleTime()
         {
             Console.Write(DateTime.Now);
